@@ -1,0 +1,21 @@
+# environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.hypothesis/
+
+# pipeline outputs (rebuilt by `persuadables data/train/report`)
+/data/
+/artifacts/
+/reports/
+/runs/
+/dist/
+/build/
+*.log
+
+# local secrets and internal working notes
+.env
+/RESUME.md

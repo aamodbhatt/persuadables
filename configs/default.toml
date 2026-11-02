@@ -1,0 +1,70 @@
+# The configuration behind every number in results/ and the README.
+# Segments, CUPED covariates, the ranking outcome and the headline budget were fixed here before
+# the readout, training or evaluation stages were first run (docs/DESIGN.md, "Pre-registration").
+
+seed = 20080320
+
+[data]
+# The original file from Kevin Hillstrom's MineThatData E-Mail Analytics challenge (March 2008).
+# Served over plain HTTP only, so the sha256 below is the integrity check.
+url = "http://www.minethatdata.com/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv"
+sha256 = "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece"
+raw_path = "data/raw/hillstrom.csv"
+database_path = "data/persuadables.duckdb"
+expected_rows = 64000
+test_fraction = 0.3
+
+[experiment]
+alpha = 0.05
+power = 0.8
+bootstrap_resamples = 2000
+# Pre-period covariates only (measured in the 12 months before randomization). One level of each
+# categorical is left out so the CUPED regression has full rank.
+cuped_covariates = [
+  "history", "recency", "mens", "womens", "newbie",
+  "zip_urban", "zip_rural", "channel_web", "channel_multichannel",
+]
+balance_covariates = [
+  "recency", "history", "mens", "womens", "newbie",
+  "zip_urban", "zip_suburban", "zip_rural",
+  "channel_phone", "channel_web", "channel_multichannel",
+]
+segments = ["purchase_category", "recency_band", "history_tier", "channel", "zip_area", "tenure"]
+smd_threshold = 0.1
+srm_alpha = 0.001
+# Reporting only (added after the first readout; changes no estimate): power for, and arm size
+# needed to detect, a +10% relative lift on each metric.
+reference_relative_lift = 0.1
+
+[uplift]
+outcomes = ["visit", "conversion"]
+learners = ["s", "t", "x", "dr", "ct"]
+cv_folds = 5
+dr_crossfit_folds = 2
+uplift_at = [0.1, 0.3]
+calibration_bins = 10
+bootstrap_resamples = 200
+
+[uplift.xgboost]
+n_estimators = 200
+max_depth = 3
+learning_rate = 0.05
+subsample = 0.8
+colsample_bytree = 0.8
+min_child_weight = 20
+reg_lambda = 5.0
+n_jobs = 4
+
+[policy]
+rank_outcome = "visit"
+headline_budget = 0.3
+budgets = [0.1, 0.3, 0.5]
+grid_step = 0.01
+bootstrap_resamples = 1000
+
+[output]
+artifacts_dir = "artifacts"
+results_dir = "results"
+figures_dir = "docs/assets"
+report_path = "reports/dashboard.html"
+plotly_js = "inline"
