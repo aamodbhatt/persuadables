@@ -16,6 +16,5 @@ __pycache__/
 /build/
 *.log
 
-# local secrets and internal working notes
+# local secrets
 .env
-/RESUME.md

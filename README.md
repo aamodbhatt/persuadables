@@ -27,9 +27,9 @@ average effect, and it is the easy part. The money is in the next two questions:
 persuade, and **what is it worth** to email only them? Most targeting in practice ranks customers
 by how likely they are to respond, which mixes up "would have responded anyway" with "responded
 because of the email". This project answers all three questions on a real randomized experiment,
-with the statistics a data-science screen asks for and an off-policy evaluation that puts a
-confidence interval on every claim, and it tests that classic response ranking against uplift
-ranking instead of assuming the response ranking loses.
+with a full experiment readout and an off-policy evaluation that puts a confidence interval on
+every claim, and it tests that classic response ranking against uplift ranking instead of
+assuming the response ranking loses.
 
 ## What it does
 
@@ -177,9 +177,9 @@ cent (Mens: [$0.49, $1.05] both ways).
 rate (7.9% relative) but only a 36% relative change in conversion and a 48% change in spend
 (80% power, alpha 0.05). It had 94% power for a 10% visit lift but only 12% for a 10% conversion
 lift, which would need 272,575 customers per arm.
-CUPED with nine pre-period covariates removed only **2.9%** of visit variance and under 0.25% for
-conversion and spend: purchase history barely predicts the next two weeks, so CUPED cannot rescue
-the conversion test here.
+CUPED with nine pre-period covariates removed only **2.6-2.9%** of visit variance and under 0.25%
+for conversion and spend: purchase history barely predicts the next two weeks, so CUPED cannot
+rescue the conversion test here.
 
 ### 2. Who responds: the Womens email persuades womens-merchandise buyers
 
@@ -292,7 +292,7 @@ The honest reading:
 2. **Know the minimum detectable effect before reading a non-result.** This test could not reliably
    see a conversion lift under 36%: it had 12% power for a 10% lift, which would need 272,575
    customers per arm. "Not significant on conversion" would have said nothing about a 10% lift.
-3. **CUPED is only as good as its covariate.** It cut visit variance by 2.9%, not the 50% of the
+3. **CUPED is only as good as its covariate.** It cut visit variance by 2.6-2.9%, not the 50% of the
    blog-post examples, because last year's spend barely predicts this fortnight's visits. Measure
    the reduction; do not assume it.
 4. **Pre-register segments and correct for them.** 36 heterogeneity tests would produce about two
@@ -375,9 +375,8 @@ results/                     committed JSON outputs; docs/assets: figures
 
 ## Roadmap
 
-- A scale check on the Criteo Uplift v2 dataset (13.9M rows). It was out of scope for this run:
-  its licence (CC BY-NC-SA 4.0) allows non-commercial research use and the 297 MB download would fit
-  the budget, but it was not attempted here.
+- A scale check on the Criteo Uplift v2 dataset (13.9M rows). Its licence (CC BY-NC-SA 4.0) allows
+  non-commercial research use and the ~297 MB download is feasible; it was left out of scope.
 - Rank on conversion or expected revenue directly, both as uplift (for example a decomposed
   estimator: visit uplift x conversion given visit) and as a P(buy | emailed) response baseline,
   evaluated as a new, separately reported analysis.
