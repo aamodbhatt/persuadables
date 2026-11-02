@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>persuadables dashboard</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --s3: #1baf7a;
+    --good: #006300;
+    --bad: #b42323;
+    --band: rgba(42, 120, 214, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --ink: #f0efec;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255, 255, 255, 0.10);
+      --s1: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --good: #0ca30c;
+      --bad: #e66767;
+      --band: rgba(57, 135, 229, 0.20);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --good: #0ca30c;
+    --bad: #e66767;
+    --band: rgba(57, 135, 229, 0.20);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+  header { margin-bottom: 28px; }
+  .eyebrow { color: var(--ink-2); font-size: 13px; letter-spacing: 0.02em; }
+  h1 { font-size: 34px; margin: 4px 0 6px; letter-spacing: -0.02em; }
+  .hook { font-size: 17px; color: var(--ink-2); margin: 0 0 14px; max-width: 760px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    border: 1px solid var(--border); border-radius: 999px; padding: 3px 11px;
+    font-size: 12.5px; color: var(--ink-2); background: var(--surface);
+  }
+  .chip b { color: var(--ink); font-weight: 600; }
+  section { margin-top: 36px; }
+  h2 { font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .lede { color: var(--ink-2); margin: 0 0 16px; max-width: 820px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .grid { display: grid; gap: 14px; }
+  .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr !important; } }
+  .tile .label { font-size: 12.5px; color: var(--ink-2); }
+  .tile .value { font-size: 26px; font-weight: 650; letter-spacing: -0.01em; margin: 2px 0; }
+  .tile .sub { font-size: 12.5px; color: var(--muted); }
+  .tile.accent { border-color: var(--s1); box-shadow: inset 3px 0 0 var(--s1); }
+  .chart { width: 100%; height: 360px; }
+  .chart.tall { height: 470px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; }
+  .controls label { font-size: 13px; color: var(--ink-2); }
+  select, input[type="range"] { font: inherit; color: var(--ink); }
+  select {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 4px 8px;
+  }
+  input[type="range"] { width: min(420px, 100%); accent-color: var(--s1); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--grid);
+           white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--ink-2); font-weight: 600; }
+  td { font-variant-numeric: tabular-nums; }
+  .table-scroll { overflow-x: auto; }
+  .budget { font-size: 30px; font-weight: 700; color: var(--s1); }
+  .note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+  .pos { color: var(--good); }
+  .neg { color: var(--bad); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+  code { font-size: 12.5px; background: var(--surface); border: 1px solid var(--border);
+         border-radius: 6px; padding: 1px 6px; }
+</style>
+<!--PLOTLY-->
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>persuadables</h1>
+    <p class="hook">Who does a marketing campaign actually persuade? The experiment readout,
+      uplift models that find the customers worth emailing, and what targeting them is worth.</p>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <section id="readout">
+    <h2>1. Did the emails work?</h2>
+    <p class="lede">Average treatment effects against the no-email holdout. z-test for the rates,
+      Welch's t-test plus a bootstrap interval for spend, CUPED with pre-period covariates, and
+      Holm correction across both emails and all three metrics.</p>
+    <div class="grid g3" id="effect-tiles"></div>
+    <div class="grid" style="margin-top:14px; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr)">
+      <div class="card"><div id="effects-chart" class="chart"></div></div>
+      <div class="card table-scroll"><table id="effects-table"></table>
+        <div class="note">Rates in percentage points, spend in dollars per customer. MDE: minimum
+          detectable effect at 80% power, alpha 0.05, for the realised arm sizes. CUPED VR: share of
+          variance removed by the pre-period covariates.</div></div>
+    </div>
+  </section>
+
+  <section id="segments">
+    <h2>2. Who responds?</h2>
+    <p class="lede">Effects within pre-registered segments, fixed in SQL before any effect was
+      estimated. The p-value is Cochran's Q test that the effect is the same in every level,
+      Holm-adjusted across all segment tests.</p>
+    <div class="card">
+      <div class="controls"><label for="segment-metric">Metric</label>
+        <select id="segment-metric"></select></div>
+      <div id="segments-chart" class="chart tall"></div>
+    </div>
+  </section>
+
+  <section id="uplift">
+    <h2>3. Can a model find the persuadables?</h2>
+    <p class="lede" id="uplift-lede"></p>
+    <div class="grid g2">
+      <div class="card">
+        <div class="controls">
+          <label for="qini-outcome">Outcome</label><select id="qini-outcome"></select>
+          <label for="qini-arm">Email</label><select id="qini-arm"></select>
+        </div>
+        <div id="qini-chart" class="chart"></div>
+      </div>
+      <div class="card table-scroll">
+        <table id="learner-table"></table>
+        <div class="note">Qini coefficient: area between the Qini curve and random targeting,
+          normalized so 0 = random and 1 = oracle (95% bootstrap CI over test customers).
+          Bold: the learner chosen on the training split.</div>
+      </div>
+      <div class="card"><div id="calibration-chart" class="chart"></div></div>
+      <div class="card"><div id="shap-chart" class="chart"></div></div>
+    </div>
+  </section>
+
+  <section id="policy">
+    <h2>4. Policy simulator</h2>
+    <p class="lede">Email the top <i>k</i>% of test customers by predicted uplift, each with the
+      email the model expects to work best on them, and compare with a response model, random
+      targeting and emailing everyone. Values are off-policy estimates (self-normalized inverse
+      propensity weighting) on the held-out randomized test split; each tile shows that policy's
+      own 95% bootstrap interval.</p>
+    <div class="card">
+      <div class="controls">
+        <label for="budget">Budget</label>
+        <input type="range" id="budget" min="1" max="100" step="1">
+        <span class="budget" id="budget-label"></span>
+      </div>
+      <div class="grid g4" id="policy-tiles"></div>
+      <div class="controls" style="margin-top:14px">
+        <label for="policy-outcome">Show</label><select id="policy-outcome"></select>
+      </div>
+      <div id="policy-chart" class="chart"></div>
+      <div class="note" id="policy-note"></div>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const DATA = /*PAYLOAD*/null;
+
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const pct = (v, d = 1) => (v === null ? "n/a" : `${(100 * v).toFixed(d)}%`);
+const pp = (v, d = 2) => (v === null ? "n/a" : `${v >= 0 ? "+" : ""}${(100 * v).toFixed(d)} pp`);
+const money = (v, d = 2) => (v === null ? "n/a" : `${v < 0 ? "-" : ""}$${Math.abs(v).toFixed(d)}`);
+const num = (v, d = 1) => (v === null ? "n/a" : v.toFixed(d));
+const signed = (v, d = 1) => (v === null ? "n/a" : `${v >= 0 ? "+" : ""}${v.toFixed(d)}`);
+const pval = (p) => (p < 1e-4 ? p.toExponential(1) : p.toFixed(4));
+const fmtEffect = (metric, v) => (metric === "spend" ? `${v >= 0 ? "+" : "-"}$${Math.abs(v).toFixed(2)}` : pp(v));
+const L = DATA.labels;
+const armName = (a) => L.arms[String(a)];
+
+function theme() {
+  return {
+    ink: css("--ink"), ink2: css("--ink-2"), muted: css("--muted"), grid: css("--grid"),
+    baseline: css("--baseline"), surface: css("--surface"), s1: css("--s1"), s2: css("--s2"),
+    s3: css("--s3"), band: css("--band"),
+  };
+}
+const armColor = (t, a) => (a === 1 ? t.s1 : a === 2 ? t.s2 : t.muted);
+
+function layout(t, extra = {}) {
+  return Object.assign({
+    paper_bgcolor: t.surface, plot_bgcolor: t.surface,
+    font: { family: 'system-ui, -apple-system, "Segoe UI", sans-serif', color: t.ink2, size: 12 },
+    margin: { l: 60, r: 16, t: 36, b: 48 },
+    xaxis: { gridcolor: t.grid, zerolinecolor: t.baseline, linecolor: t.baseline },
+    yaxis: { gridcolor: t.grid, zerolinecolor: t.baseline, linecolor: t.baseline },
+    legend: { orientation: "h", y: -0.2, font: { size: 11 } },
+    hoverlabel: { bgcolor: t.surface, bordercolor: t.baseline, font: { color: t.ink } },
+  }, extra);
+}
+const CONFIG = { displayModeBar: false, responsive: true };
+const title = (text, t) => ({ text, x: 0, xanchor: "left", font: { size: 14, color: t.ink } });
+
+function fillHeader() {
+  const m = DATA.meta;
+  document.getElementById("eyebrow").textContent =
+    `MineThatData e-mail experiment, ${m.customers.toLocaleString()} customers randomized into three arms`;
+  const chips = [
+    ["Data checks", `${m.checksPassed}/${m.checks} passed`],
+    ["SRM p", m.srmP.toFixed(2)],
+    ["max |SMD|", m.maxSmd.toFixed(3)],
+    ["Train / test", `${m.nTrain.toLocaleString()} / ${m.nTest.toLocaleString()}`],
+    ["Seed", String(m.seed)],
+  ];
+  document.getElementById("chips").innerHTML = chips
+    .map(([k, v]) => `<span class="chip">${k} <b>${v}</b></span>`).join("");
+  document.getElementById("uplift-lede").textContent =
+    `${m.nLearners} uplift learners on XGBoost, selected by ${m.cvFolds}-fold cross-validation ` +
+    "on the training split and scored once on the held-out test split.";
+}
+
+function fillEffects() {
+  const tiles = document.getElementById("effect-tiles");
+  tiles.innerHTML = ["visit", "conversion", "spend"].map((metric) => {
+    const rows = DATA.effects.filter((e) => e.metric === metric);
+    const control = rows[0].control;
+    const parts = rows.map((e) => `<div class="sub"><b style="color:var(--ink)">${e.armName}</b>
+      ${fmtEffect(metric, e.diff)} (${pct(e.diff / e.control, 0)} lift),
+      95% CI ${fmtEffect(metric, e.low)} to ${fmtEffect(metric, e.high)}</div>`).join("");
+    const base = metric === "spend" ? money(control) : pct(control, 2);
+    return `<div class="card tile"><div class="label">${L.metrics[metric]}: no-email baseline</div>
+      <div class="value">${base}</div>${parts}</div>`;
+  }).join("");
+
+  // Rates in percentage points, spend in dollars; ranges without units so the table fits.
+  const bare = (metric, v) => (metric === "spend" ? v.toFixed(2) : (100 * v).toFixed(2));
+  const range = (metric, lo, hi) => `${bare(metric, lo)} to ${bare(metric, hi)}`;
+  const head = "<tr><th>Effect</th><th>Diff</th><th>95% CI</th><th>Bootstrap</th>" +
+    "<th>CUPED VR</th><th>MDE</th><th>Holm p</th></tr>";
+  const body = DATA.effects.map((e) => `<tr><td>${e.armName.replace(" email", "")}, ${e.metric}</td>
+    <td>${fmtEffect(e.metric, e.diff)}</td>
+    <td>${range(e.metric, e.low, e.high)}</td>
+    <td>${range(e.metric, e.bootLow, e.bootHigh)}</td>
+    <td>${pct(e.varianceReduction, 2)}</td><td>${fmtEffect(e.metric, e.mde)}</td>
+    <td>${pval(e.pHolm)}</td></tr>`).join("");
+  document.getElementById("effects-table").innerHTML = head + body;
+
+  const t = theme();
+  const rows = [...DATA.effects].reverse();
+  const labels = rows.map((e) => `${e.armName}, ${e.metric}`);
+  const traces = [1, 2].map((arm) => {
+    const r = rows.filter((e) => e.arm === arm);
+    return {
+      type: "scatter", mode: "markers", name: armName(arm),
+      x: r.map((e) => e.diff / e.control), y: r.map((e) => `${e.armName}, ${e.metric}`),
+      error_x: { type: "data", symmetric: false, color: armColor(t, arm), thickness: 2, width: 0,
+        array: r.map((e) => (e.high - e.diff) / e.control),
+        arrayminus: r.map((e) => (e.diff - e.low) / e.control) },
+      marker: { color: armColor(t, arm), size: 10, line: { color: t.surface, width: 2 } },
+      hovertemplate: "%{y}<br>lift %{x:.1%}<extra></extra>",
+    };
+  });
+  Plotly.react("effects-chart", traces, layout(t, {
+    title: title("Relative lift vs no email (95% CI)", t),
+    margin: { l: 150, r: 16, t: 36, b: 40 },
+    xaxis: { gridcolor: t.grid, zerolinecolor: t.muted, tickformat: ".0%" },
+    yaxis: { categoryorder: "array", categoryarray: labels, gridcolor: t.grid },
+    showlegend: false,
+  }), CONFIG);
+}
+
+function fillSegments() {
+  const select = document.getElementById("segment-metric");
+  if (!select.options.length) {
+    select.innerHTML = ["visit", "conversion", "spend"]
+      .map((m) => `<option value="${m}">${L.metrics[m]}</option>`).join("");
+    select.addEventListener("change", fillSegments);
+  }
+  const metric = select.value;
+  const t = theme();
+  const order = [];
+  Object.keys(L.segments).forEach((segment) => {
+    DATA.segments.filter((s) => s.segment === segment && s.metric === metric && s.arm === 1)
+      .forEach((s) => order.push(`${L.segments[segment]}: ${s.level}`));
+  });
+  const traces = [1, 2].map((arm) => {
+    const r = DATA.segments.filter((s) => s.metric === metric && s.arm === arm);
+    return {
+      type: "scatter", mode: "markers", name: armName(arm),
+      x: r.map((s) => s.diff), y: r.map((s) => `${L.segments[s.segment]}: ${s.level}`),
+      error_x: { type: "data", symmetric: false, color: armColor(t, arm), thickness: 1.6, width: 0,
+        array: r.map((s) => s.high - s.diff), arrayminus: r.map((s) => s.diff - s.low) },
+      marker: { color: armColor(t, arm), size: 8, line: { color: t.surface, width: 1.5 } },
+      hovertemplate: `${armName(arm)}<br>%{y}<br>effect %{x}<extra></extra>`,
+    };
+  });
+  const tests = DATA.segmentTests.filter((s) => s.metric === metric);
+  const annotations = Object.keys(L.segments).map((segment) => {
+    const p = [1, 2].map((a) => tests.find((s) => s.segment === segment && s.arm === a).pHolm);
+    const first = order.find((o) => o.startsWith(`${L.segments[segment]}:`));
+    return { x: 1, xref: "paper", xanchor: "right", y: first, yanchor: "bottom", showarrow: false,
+      text: `Holm p (heterogeneity): Mens ${pval(p[0])}, Womens ${pval(p[1])}`,
+      font: { size: 10.5, color: t.muted } };
+  });
+  Plotly.react("segments-chart", traces, layout(t, {
+    title: title(`Effect on ${L.metrics[metric].toLowerCase()} by segment level`, t),
+    margin: { l: 210, r: 16, t: 36, b: 40 },
+    xaxis: { gridcolor: t.grid, zerolinecolor: t.muted,
+      tickformat: metric === "spend" ? "$.2f" : ".1%" },
+    yaxis: { categoryorder: "array", categoryarray: [...order].reverse(), gridcolor: t.grid },
+    legend: { orientation: "h", y: 1.06, x: 0.45 },
+    annotations,
+  }), CONFIG);
+}
+
+function fillUplift() {
+  const outcomeSel = document.getElementById("qini-outcome");
+  const armSel = document.getElementById("qini-arm");
+  if (!outcomeSel.options.length) {
+    const outcomes = [...new Set(DATA.qini.map((q) => q.outcome))];
+    outcomeSel.innerHTML = outcomes.map((o) => `<option value="${o}">${L.metrics[o]}</option>`).join("");
+    armSel.innerHTML = L.treatmentArms.map((a) => `<option value="${a}">${armName(a)}</option>`).join("");
+    armSel.value = "2";
+    outcomeSel.addEventListener("change", fillUplift);
+    armSel.addEventListener("change", fillUplift);
+  }
+  const outcome = outcomeSel.value;
+  const arm = Number(armSel.value);
+  const t = theme();
+  const scores = DATA.qini.filter((q) => q.outcome === outcome && q.arm === arm);
+  const random = DATA.randomCurves[`${outcome}/${arm}`];
+  const traces = scores.sort((a, b) => a.selected - b.selected).map((q) => ({
+    type: "scatter", mode: "lines", name: L.learners[q.learner] + (q.selected ? " (selected)" : ""),
+    x: q.share, y: q.curve,
+    line: { color: q.selected ? t.s1 : t.baseline, width: q.selected ? 3 : 1.5 },
+    hovertemplate: `${L.learners[q.learner]}<br>target %{x:.0%}: %{y:.4f} per customer<extra></extra>`,
+  }));
+  traces.push({ type: "scatter", mode: "lines", name: "Random targeting", x: random.share,
+    y: random.incremental_per_customer, line: { color: t.muted, width: 1.5, dash: "dot" },
+    hoverinfo: "skip" });
+  Plotly.react("qini-chart", traces, layout(t, {
+    title: title(`Qini curves, ${armName(arm)} on ${outcome} (test split)`, t),
+    xaxis: { gridcolor: t.grid, tickformat: ".0%", title: { text: "Share of customers targeted" } },
+    yaxis: { gridcolor: t.grid, title: { text: `Incremental ${outcome}s per customer` } },
+    legend: { orientation: "h", y: -0.28, font: { size: 10.5 } },
+    margin: { l: 64, r: 16, t: 36, b: 90 },
+  }), CONFIG);
+
+  const head = "<tr><th>Learner</th><th>Qini (95% CI)</th><th>AUUC</th><th>Uplift@10%</th>" +
+    "<th>Uplift@30%</th><th>Calib. slope</th></tr>";
+  const body = DATA.qini.filter((q) => q.outcome === outcome && q.arm === arm).map((q) => {
+    const style = q.selected ? ' style="font-weight:700"' : "";
+    return `<tr${style}><td>${L.learners[q.learner]}</td>
+      <td>${num(q.qini.estimate, 3)} (${num(q.qini.low, 3)} to ${num(q.qini.high, 3)})</td>
+      <td>${num(q.auuc, 3)}</td><td>${pp(q.upliftAt["0.1"], 1)}</td><td>${pp(q.upliftAt["0.3"], 1)}</td>
+      <td>${num(q.calibration.slope, 2)}</td></tr>`;
+  }).join("");
+  document.getElementById("learner-table").innerHTML = head + body;
+
+  const selected = DATA.qini.find((q) => q.outcome === outcome && q.arm === arm && q.selected);
+  const bins = selected.calibration.bins;
+  const lo = Math.min(...bins.map((b) => Math.min(b.predicted, b.observed - 2 * b.se)));
+  const hi = Math.max(...bins.map((b) => Math.max(b.predicted, b.observed + 2 * b.se)));
+  Plotly.react("calibration-chart", [
+    { type: "scatter", mode: "lines", x: [lo, hi], y: [lo, hi], name: "Perfect calibration",
+      line: { color: t.muted, width: 1.2 }, hoverinfo: "skip" },
+    { type: "scatter", mode: "markers", name: "Decile", x: bins.map((b) => b.predicted),
+      y: bins.map((b) => b.observed),
+      error_y: { type: "data", array: bins.map((b) => 1.96 * b.se), color: armColor(t, arm),
+        thickness: 1.6, width: 0 },
+      marker: { color: armColor(t, arm), size: 9, line: { color: t.surface, width: 1.5 } },
+      hovertemplate: "predicted %{x:.2%}<br>observed %{y:.2%}<extra></extra>" },
+  ], layout(t, {
+    title: title(`Calibration by decile: ${L.learners[selected.learner]}`, t),
+    xaxis: { gridcolor: t.grid, tickformat: ".1%", title: { text: "Predicted uplift" } },
+    yaxis: { gridcolor: t.grid, tickformat: ".1%", title: { text: "Observed uplift" } },
+  }), CONFIG);
+
+  const shap = DATA.shap[`${outcome}/${arm}`];
+  if (shap) {
+    const order = shap.meanAbs.map((v, i) => [v, i]).sort((a, b) => a[0] - b[0]);
+    Plotly.react("shap-chart", [{
+      type: "bar", orientation: "h", x: order.map(([v]) => v * 100),
+      y: order.map(([, i]) => shap.features[i]), marker: { color: armColor(t, arm) },
+      hovertemplate: "%{y}: %{x:.2f} pp<extra></extra>",
+    }], layout(t, {
+      title: title(`What drives predicted uplift: mean |SHAP| (${L.learners[shap.learner]})`, t),
+      margin: { l: 190, r: 16, t: 36, b: 44 },
+      xaxis: { gridcolor: t.grid, title: { text: "percentage points of uplift" } },
+      yaxis: { gridcolor: t.grid }, bargap: 0.35, showlegend: false,
+    }), CONFIG);
+  }
+}
+
+const POLICY_ORDER = ["uplift_multi", "uplift_single", "response", "random"];
+function curve(policy, outcome) {
+  return DATA.policy.curves.find((c) => c.policy === policy && c.outcome === outcome);
+}
+
+function fillPolicy() {
+  const slider = document.getElementById("budget");
+  const outcomeSel = document.getElementById("policy-outcome");
+  if (!outcomeSel.options.length) {
+    outcomeSel.innerHTML = ["conversion", "spend", "visit"]
+      .map((o) => `<option value="${o}">${L.per1000[o]} per 1,000 emails</option>`).join("");
+    slider.value = String(Math.round(100 * DATA.meta.headlineBudget));
+    slider.addEventListener("input", fillPolicy);
+    outcomeSel.addEventListener("change", fillPolicy);
+  }
+  const budget = Number(slider.value) / 100;
+  const outcome = outcomeSel.value;
+  document.getElementById("budget-label").textContent = `${slider.value}% of customers emailed`;
+  const t = theme();
+  const at = (c, key) => {
+    const i = c.budgets.findIndex((b) => Math.abs(b - budget) < 1e-6);
+    return c[key][i];
+  };
+  document.getElementById("policy-tiles").innerHTML = POLICY_ORDER.map((p) => {
+    const rows = ["visit", "conversion", "spend"].map((o) => {
+      const c = curve(p, o);
+      const v = at(c, "incremental_per_1000");
+      const lo = at(c, "incremental_per_1000_low");
+      const hi = at(c, "incremental_per_1000_high");
+      const f = o === "spend" ? (x) => money(x, 0) : (x) => num(x, 1);
+      return `<div class="sub">${L.per1000[o]}: <b style="color:var(--ink)">${f(v)}</b>
+        <span>(${f(lo)} to ${f(hi)})</span></div>`;
+    }).join("");
+    const c = curve(p, outcome);
+    const head = outcome === "spend" ? money(at(c, "incremental_per_1000"), 0) : num(at(c, "incremental_per_1000"), 1);
+    return `<div class="card tile${p === "uplift_multi" ? " accent" : ""}">
+      <div class="label">${L.policies[p]}</div><div class="value">${head}</div>
+      <div class="sub" style="margin-bottom:4px">${L.per1000[outcome].toLowerCase()} per 1,000 emails</div>
+      ${rows}</div>`;
+  }).join("");
+
+  const traces = [];
+  const multi = curve("uplift_multi", outcome);
+  const keep = multi.budgets.map((b) => b >= 0.05);
+  const xs = multi.budgets.filter((_, i) => keep[i]);
+  const sel = (arr) => arr.filter((_, i) => keep[i]);
+  traces.push({ type: "scatter", mode: "lines", x: xs, y: sel(multi.incremental_per_1000_high),
+    line: { width: 0 }, hoverinfo: "skip", showlegend: false });
+  traces.push({ type: "scatter", mode: "lines", x: xs, y: sel(multi.incremental_per_1000_low),
+    fill: "tonexty", fillcolor: t.band, line: { width: 0 }, hoverinfo: "skip",
+    name: "95% CI (uplift, best email)" });
+  const colors = { uplift_multi: t.s1, response: t.s2, uplift_single: t.s3, random: t.muted };
+  ["random", "response", "uplift_single", "uplift_multi"].forEach((p) => {
+    const c = curve(p, outcome);
+    traces.push({ type: "scatter", mode: "lines", name: L.policies[p], x: xs,
+      y: sel(c.incremental_per_1000),
+      line: { color: colors[p], width: p === "uplift_multi" ? 3 : 1.8 },
+      hovertemplate: `${L.policies[p]}<br>budget %{x:.0%}: %{y:.2f}<extra></extra>` });
+  });
+  Plotly.react("policy-chart", traces, layout(t, {
+    title: title(`${L.per1000[outcome]} per 1,000 emails, by budget`, t),
+    xaxis: { gridcolor: t.grid, tickformat: ".0%", title: { text: "Budget: share of customers emailed" } },
+    yaxis: { gridcolor: t.grid, tickprefix: outcome === "spend" ? "$" : "" },
+    shapes: [{ type: "line", x0: budget, x1: budget, yref: "paper", y0: 0, y1: 1,
+      line: { color: t.ink2, width: 1.2 } }],
+    margin: { l: 64, r: 16, t: 36, b: 90 },
+    legend: { orientation: "h", y: -0.3, font: { size: 11 } },
+  }), CONFIG);
+  const best = DATA.meta.bestArm;
+  document.getElementById("policy-note").textContent =
+    `Ranking: ${DATA.meta.rankOutcome} uplift (pre-registered). The response model ranks by ` +
+    `P(${DATA.meta.rankOutcome} | ${armName(best)}). Random targeting, the response model and the ` +
+    `"one email" policy use the ${armName(best)}, the better single email on the training split; ` +
+    "random targeting has the same value per email as emailing everyone. " +
+    `${DATA.meta.policyResamples} Poisson-bootstrap resamples of the test customers.`;
+}
+
+function fillFooter() {
+  document.getElementById("footer").innerHTML =
+    "Reproduce: <code>uv run persuadables all</code>. Every number on this page comes from " +
+    "<code>results/*.json</code>; the dashboard is a static file with the results embedded.";
+}
+
+function renderAll() {
+  fillEffects(); fillSegments(); fillUplift(); fillPolicy();
+}
+fillHeader(); renderAll(); fillFooter();
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+</script>
+</body>
+</html>
