@@ -1,0 +1,46 @@
+{
+  "n_train": 16000,
+  "n_test": 8000,
+  "true_ate": 0.11026695892243357,
+  "true_uplift_sd": 0.1145464963712394,
+  "true_uplift_ranking_qini": 0.11333843984878,
+  "response_model_qini": 0.05000836379218718,
+  "constant_prediction_pehe": 0.1145464963712394,
+  "learners": [
+    {
+      "learner": "S-learner",
+      "spearman_with_true_uplift": 0.9060350449383042,
+      "pehe": 0.05646853179965229,
+      "ate_error": -0.010271226734441613,
+      "qini": 0.10098402229086281
+    },
+    {
+      "learner": "T-learner",
+      "spearman_with_true_uplift": 0.8916617819598027,
+      "pehe": 0.0599526030978879,
+      "ate_error": -0.0004846731708915003,
+      "qini": 0.10483045976380324
+    },
+    {
+      "learner": "X-learner",
+      "spearman_with_true_uplift": 0.9502633503494398,
+      "pehe": 0.03820760977533309,
+      "ate_error": -0.000576971712083596,
+      "qini": 0.120472659678441
+    },
+    {
+      "learner": "DR-learner",
+      "spearman_with_true_uplift": 0.9288379508137414,
+      "pehe": 0.04846651614389561,
+      "ate_error": -0.0007908284805328153,
+      "qini": 0.11886188710795997
+    },
+    {
+      "learner": "Class transformation",
+      "spearman_with_true_uplift": 0.8932686110777254,
+      "pehe": 0.05773128110228006,
+      "ate_error": 0.003796417928946305,
+      "qini": 0.12078881414023883
+    }
+  ]
+}

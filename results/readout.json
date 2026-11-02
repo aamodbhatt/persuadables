@@ -1,0 +1,3070 @@
+{
+  "n_customers": 64000,
+  "arm_counts": {
+    "No email": 21306,
+    "Mens email": 21307,
+    "Womens email": 21387
+  },
+  "spend_zero_share": 0.99096875,
+  "srm": {
+    "counts": [
+      21306,
+      21307,
+      21387
+    ],
+    "expected_counts": [
+      21333.333333333332,
+      21333.333333333332,
+      21333.333333333332
+    ],
+    "chi2": 0.20253125000000002,
+    "df": 2,
+    "p_value": 0.9036929575604196
+  },
+  "balance": [
+    {
+      "covariate": "recency",
+      "arm": 1,
+      "smd": 0.006831532454259954
+    },
+    {
+      "covariate": "history",
+      "arm": 1,
+      "smd": 0.00761286832154239
+    },
+    {
+      "covariate": "mens",
+      "arm": 1,
+      "smd": -0.0045823256374879625
+    },
+    {
+      "covariate": "womens",
+      "arm": 1,
+      "smd": 0.007588929691887142
+    },
+    {
+      "covariate": "newbie",
+      "arm": 1,
+      "smd": -0.0008918953696535328
+    },
+    {
+      "covariate": "zip_urban",
+      "arm": 1,
+      "smd": 0.0019722315768513645
+    },
+    {
+      "covariate": "zip_suburban",
+      "arm": 1,
+      "smd": -0.01174335672606268
+    },
+    {
+      "covariate": "zip_rural",
+      "arm": 1,
+      "smd": 0.01365900039927897
+    },
+    {
+      "covariate": "channel_phone",
+      "arm": 1,
+      "smd": -0.008275992307117473
+    },
+    {
+      "covariate": "channel_web",
+      "arm": 1,
+      "smd": 0.011013588354428299
+    },
+    {
+      "covariate": "channel_multichannel",
+      "arm": 1,
+      "smd": -0.004181536419632754
+    },
+    {
+      "covariate": "recency",
+      "arm": 2,
+      "smd": 0.005180013205688683
+    },
+    {
+      "covariate": "history",
+      "arm": 2,
+      "smd": 0.006510722458553667
+    },
+    {
+      "covariate": "mens",
+      "arm": 2,
+      "smd": -0.008630731202832915
+    },
+    {
+      "covariate": "womens",
+      "arm": 2,
+      "smd": 0.004946313992582152
+    },
+    {
+      "covariate": "newbie",
+      "arm": 2,
+      "smd": 0.0025567009140795606
+    },
+    {
+      "covariate": "zip_urban",
+      "arm": 2,
+      "smd": -0.0017628666291550237
+    },
+    {
+      "covariate": "zip_suburban",
+      "arm": 2,
+      "smd": -0.0010891197386245202
+    },
+    {
+      "covariate": "zip_rural",
+      "arm": 2,
+      "smd": 0.00395850560137286
+    },
+    {
+      "covariate": "channel_phone",
+      "arm": 2,
+      "smd": 0.008622833281250204
+    },
+    {
+      "covariate": "channel_web",
+      "arm": 2,
+      "smd": -0.005147863897421752
+    },
+    {
+      "covariate": "channel_multichannel",
+      "arm": 2,
+      "smd": -0.00528289712504171
+    }
+  ],
+  "effects": [
+    {
+      "arm": 1,
+      "arm_name": "Mens email",
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 21307,
+        "n_control": 21306,
+        "treatment_mean": 0.18275684047496127,
+        "control_mean": 0.10616727682343002,
+        "diff": 0.07658956365153125,
+        "se": 0.0033858083545245127,
+        "ci_low": 0.06995350121810838,
+        "ci_high": 0.08322562608495411,
+        "statistic": 22.48604082719282,
+        "p_value": 5.685165482802317e-112
+      },
+      "bootstrap": {
+        "low": 0.06968906934196982,
+        "high": 0.08344315531680278,
+        "se": 0.0035178663158579224,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 0.18275684047496127,
+          "control_mean": 0.10616727682343002,
+          "diff": 0.07658956365153125,
+          "se": 0.0033858878117283653,
+          "ci_low": 0.06995314760976148,
+          "ci_high": 0.083225979693301,
+          "statistic": 22.620230766723257,
+          "p_value": 1.3644511962742905e-112
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 0.18248603278507908,
+          "control_mean": 0.10643809722371053,
+          "diff": 0.07604793556136855,
+          "se": 0.0033360136062766544,
+          "ci_low": 0.06950927410993066,
+          "ci_high": 0.08258659701280643,
+          "statistic": 22.796050776976934,
+          "p_value": 2.6263554426410917e-114
+        },
+        "theta": [
+          5.878634679806298e-05,
+          -0.006756951598045239,
+          0.10017165707403569,
+          0.09713269763356443,
+          -0.06853616001437528,
+          -0.0004250542285587675,
+          0.052979939431181,
+          0.03149027852478131,
+          0.00770477175622339
+        ],
+        "variance_reduction": 0.029063333692070148
+      },
+      "p_holm": 3.41109928968139e-111,
+      "power": {
+        "sigma": 0.3080515965797405,
+        "mde": 0.008361539429547779,
+        "mde_relative": 0.0787581605154487,
+        "mde_cuped": 0.008239136406677566,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.9448934539486378,
+        "n_per_arm_for_reference_lift": 13217
+      }
+    },
+    {
+      "arm": 1,
+      "arm_name": "Mens email",
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 21307,
+        "n_control": 21306,
+        "treatment_mean": 0.01253109306800582,
+        "control_mean": 0.005726086548390125,
+        "diff": 0.006805006519615695,
+        "se": 0.000920851175531638,
+        "ci_low": 0.005000171380452312,
+        "ci_high": 0.008609841658779076,
+        "statistic": 7.385114410925771,
+        "p_value": 1.5232235005955427e-13
+      },
+      "bootstrap": {
+        "low": 0.004974602258593534,
+        "high": 0.008635411441478927,
+        "se": 0.0009237979991062784,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 0.01253109306800582,
+          "control_mean": 0.005726086548390125,
+          "diff": 0.006805006519615695,
+          "se": 0.0009208727857351216,
+          "ci_low": 0.005000070747732388,
+          "ci_high": 0.008609942291499001,
+          "statistic": 7.38973572140406,
+          "p_value": 1.50181578515438e-13
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 0.012514831778197285,
+          "control_mean": 0.005742348601424923,
+          "diff": 0.006772483176772362,
+          "se": 0.0009198281770529727,
+          "ci_low": 0.004969594871398995,
+          "ci_high": 0.008575371482145728,
+          "statistic": 7.362769858247488,
+          "p_value": 1.8382589634160249e-13
+        },
+        "theta": [
+          9.264911369098193e-06,
+          -0.0005287977851157872,
+          0.006017619525112733,
+          0.005541191265448387,
+          -0.004831640812438722,
+          0.00015941074793003252,
+          0.0021221784444066783,
+          0.0012611283214096075,
+          -0.00024003837465787092
+        ],
+        "variance_reduction": 0.002276758223197395
+      },
+      "p_holm": 6.092894002382171e-13,
+      "power": {
+        "sigma": 0.07545394940777103,
+        "mde": 0.0020480698041922553,
+        "mde_relative": 0.35767356760754254,
+        "mde_cuped": 0.0020457369957412232,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.12270258844010277,
+        "n_per_arm_for_reference_lift": 272575
+      }
+    },
+    {
+      "arm": 1,
+      "arm_name": "Mens email",
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 21307,
+        "n_control": 21306,
+        "treatment_mean": 1.422616511005773,
+        "control_mean": 0.6527893551112361,
+        "diff": 0.7698271558945368,
+        "se": 0.14524656024868676,
+        "ci_low": 0.48513973256840753,
+        "ci_high": 1.054514579220666,
+        "statistic": 5.300140358411669,
+        "p_value": 1.1638149682254818e-07
+      },
+      "bootstrap": {
+        "low": 0.49214509438883325,
+        "high": 1.0534404710426026,
+        "se": 0.14544802914848495,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 1.422616511005773,
+          "control_mean": 0.6527893551112361,
+          "diff": 0.7698271558945368,
+          "se": 0.14524656024868676,
+          "ci_low": 0.48513973256840753,
+          "ci_high": 1.054514579220666,
+          "statistic": 5.300140358411669,
+          "p_value": 1.1638149682254818e-07
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21307,
+          "n_control": 21306,
+          "treatment_mean": 1.4210824081783902,
+          "control_mean": 0.65432352994199,
+          "diff": 0.7667588782364002,
+          "se": 0.14515206451616058,
+          "ci_low": 0.482256670037621,
+          "ci_high": 1.0512610864351795,
+          "statistic": 5.282452445938395,
+          "p_value": 1.2819202085530394e-07
+        },
+        "theta": [
+          0.001028949553555238,
+          -0.05163326021857437,
+          1.036798576532852,
+          0.7997172519293387,
+          -0.5328681307253337,
+          -0.1191055760226931,
+          0.063321644360713,
+          0.16819539869292835,
+          -0.2097465635934208
+        ],
+        "variance_reduction": 0.0013051434062235634
+      },
+      "p_holm": 3.4914449046764456e-07,
+      "power": {
+        "sigma": 11.588199681271533,
+        "mde": 0.31454207551020813,
+        "mde_relative": 0.4818431444192434,
+        "mde_cuped": 0.3143367472347069,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.08953994545455381,
+        "n_per_arm_for_reference_lift": 494680
+      }
+    },
+    {
+      "arm": 2,
+      "arm_name": "Womens email",
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 21387,
+        "n_control": 21306,
+        "treatment_mean": 0.151400383410483,
+        "control_mean": 0.10616727682343002,
+        "diff": 0.045233106587052985,
+        "se": 0.0032343863583279126,
+        "ci_low": 0.03889382581264261,
+        "ci_high": 0.05157238736146336,
+        "statistic": 13.949180655258505,
+        "p_value": 3.1824031593349214e-44
+      },
+      "bootstrap": {
+        "low": 0.038914936989399365,
+        "high": 0.05140322707136986,
+        "se": 0.0032028349526158264,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 0.151400383410483,
+          "control_mean": 0.10616727682343002,
+          "diff": 0.045233106587052985,
+          "se": 0.003234462099090751,
+          "ci_low": 0.03889349376208028,
+          "ci_high": 0.05157271941202569,
+          "statistic": 13.984738482410599,
+          "p_value": 2.4324477023127946e-44
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 0.15148617086856053,
+          "control_mean": 0.10608116322323051,
+          "diff": 0.04540500764533002,
+          "se": 0.0031921042712101844,
+          "ci_low": 0.03914841699102195,
+          "ci_high": 0.051661598299638095,
+          "statistic": 14.224161802871235,
+          "p_value": 8.301811171148507e-46
+        },
+        "theta": [
+          5.7216250618022594e-05,
+          -0.005710719785183197,
+          0.06625491739025237,
+          0.09410214845367258,
+          -0.06150503859669121,
+          -0.003671639097451543,
+          0.04411873713623253,
+          0.031200337235658855,
+          0.009806703898313389
+        ],
+        "variance_reduction": 0.02586319455054642
+      },
+      "p_holm": 1.5912015796674606e-43,
+      "power": {
+        "sigma": 0.3080515965797405,
+        "mde": 0.008353716680847912,
+        "mde_relative": 0.07868447727769479,
+        "mde_cuped": 0.008244982119632148,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.9452635922605284,
+        "n_per_arm_for_reference_lift": 13217
+      }
+    },
+    {
+      "arm": 2,
+      "arm_name": "Womens email",
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 21387,
+        "n_control": 21306,
+        "treatment_mean": 0.008837144059475383,
+        "control_mean": 0.005726086548390125,
+        "diff": 0.003111057511085258,
+        "se": 0.0008226578153482761,
+        "ci_low": 0.0014986778214022343,
+        "ci_high": 0.004723437200768281,
+        "statistic": 3.77956095835785,
+        "p_value": 0.00015710512910668448
+      },
+      "bootstrap": {
+        "low": 0.0014713230139765051,
+        "high": 0.004749187727204012,
+        "se": 0.0008374117501354575,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 0.008837144059475383,
+          "control_mean": 0.005726086548390125,
+          "diff": 0.003111057511085258,
+          "se": 0.0008226770775551195,
+          "ci_low": 0.001498592366146803,
+          "ci_high": 0.004723522656023713,
+          "statistic": 3.781626589537274,
+          "p_value": 0.00015602839508556404
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 0.008837675200986913,
+          "control_mean": 0.005725553387613777,
+          "diff": 0.003112121813373135,
+          "se": 0.0008219383567450597,
+          "ci_low": 0.0015011045747838707,
+          "ci_high": 0.004723139051962399,
+          "statistic": 3.786320212257013,
+          "p_value": 0.00015311295520378378
+        },
+        "theta": [
+          6.7109676015652584e-06,
+          -0.000488580897587965,
+          0.0016648221997260695,
+          0.003586378515626522,
+          -0.0029035999945542135,
+          0.0011128624591053176,
+          0.0036197646591642893,
+          0.0012033776724585114,
+          0.0013421519770905454
+        ],
+        "variance_reduction": 0.0017937292280761907
+      },
+      "p_holm": 0.00031421025821336897,
+      "power": {
+        "sigma": 0.07545394940777103,
+        "mde": 0.0020461537054244413,
+        "mde_relative": 0.35733894137518973,
+        "mde_cuped": 0.0020443177589039045,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.1228422994471417,
+        "n_per_arm_for_reference_lift": 272575
+      }
+    },
+    {
+      "arm": 2,
+      "arm_name": "Womens email",
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 21387,
+        "n_control": 21306,
+        "treatment_mean": 1.0772015710478329,
+        "control_mean": 0.6527893551112361,
+        "diff": 0.4244122159365967,
+        "se": 0.13033285852919116,
+        "ci_low": 0.1689567898837787,
+        "ci_high": 0.6798676419894147,
+        "statistic": 3.2563715760253924,
+        "p_value": 0.0011293971023632473
+      },
+      "bootstrap": {
+        "low": 0.169563075226166,
+        "high": 0.6899605112776853,
+        "se": 0.12892167323620943,
+        "resamples": 2000
+      },
+      "cuped": {
+        "raw": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 1.0772015710478329,
+          "control_mean": 0.6527893551112361,
+          "diff": 0.4244122159365967,
+          "se": 0.13033285852919116,
+          "ci_low": 0.1689567898837787,
+          "ci_high": 0.6798676419894147,
+          "statistic": 3.2563715760253924,
+          "p_value": 0.0011293971023632473
+        },
+        "adjusted": {
+          "method": "Welch t-test",
+          "n_treatment": 21387,
+          "n_control": 21306,
+          "treatment_mean": 1.0772953969477452,
+          "control_mean": 0.6526951725091277,
+          "diff": 0.42460022443861756,
+          "se": 0.13028158894035222,
+          "ci_low": 0.16924528755984936,
+          "ci_high": 0.6799551613173858,
+          "statistic": 3.259096146217678,
+          "p_value": 0.001118609235457764
+        },
+        "theta": [
+          0.0009819328497335574,
+          -0.045074043217893364,
+          0.1197056139653054,
+          0.0946086102861567,
+          -0.38667253791635164,
+          0.163831893256879,
+          0.25851028657212644,
+          0.11201467687510051,
+          0.08937518344094042
+        ],
+        "variance_reduction": 0.0007857606496151082
+      },
+      "p_holm": 0.0011293971023632473,
+      "power": {
+        "sigma": 11.588199681271533,
+        "mde": 0.3142478015152119,
+        "mde_relative": 0.4813923496985696,
+        "mde_cuped": 0.3141243154744976,
+        "reference_relative_lift": 0.1,
+        "power_at_reference_lift": 0.08961537557926638,
+        "n_per_arm_for_reference_lift": 494680
+      }
+    }
+  ],
+  "segment_effects": [
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9558,
+        "n_control": 9638,
+        "treatment_mean": 0.16896840343168026,
+        "control_mean": 0.09981323926125753,
+        "diff": 0.06915516417042274,
+        "se": 0.004900376378223945,
+        "ci_low": 0.05955060295841297,
+        "ci_high": 0.0787597253824325,
+        "statistic": 14.052296611413663,
+        "p_value": 7.457575738216814e-45
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9558,
+        "n_control": 9638,
+        "treatment_mean": 0.011508683825068006,
+        "control_mean": 0.005499066196306288,
+        "diff": 0.006009617628761718,
+        "se": 0.0013257658215198949,
+        "ci_low": 0.003411164366648566,
+        "ci_high": 0.00860807089087487,
+        "statistic": 4.537135598292389,
+        "p_value": 5.702344411960403e-06
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9558,
+        "n_control": 9638,
+        "treatment_mean": 1.3781617493199416,
+        "control_mean": 0.6954264370201286,
+        "diff": 0.682735312299813,
+        "se": 0.22223022988537258,
+        "ci_low": 0.24714126259206887,
+        "ci_high": 1.1183293620075572,
+        "statistic": 3.0721982002717234,
+        "p_value": 0.0021282218010223327
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9622,
+        "n_control": 9638,
+        "treatment_mean": 0.11089170650592392,
+        "control_mean": 0.09981323926125753,
+        "diff": 0.011078467244666393,
+        "se": 0.004423723999340813,
+        "ci_low": 0.0024081275284129067,
+        "ci_high": 0.01974880696091988,
+        "statistic": 2.5040194151709434,
+        "p_value": 0.012279129583740955
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9622,
+        "n_control": 9638,
+        "treatment_mean": 0.006131781334441904,
+        "control_mean": 0.005499066196306288,
+        "diff": 0.0006327151381356165,
+        "se": 0.0010958022683162138,
+        "ci_low": -0.0015150178419414597,
+        "ci_high": 0.0027804481182126927,
+        "statistic": 0.5774199480153137,
+        "p_value": 0.5636558018878807
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "mens only",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9622,
+        "n_control": 9638,
+        "treatment_mean": 0.9737809187279153,
+        "control_mean": 0.6954264370201286,
+        "diff": 0.27835448170778665,
+        "se": 0.20506311079709888,
+        "ci_low": -0.12358843645917961,
+        "ci_high": 0.6802973998747529,
+        "statistic": 1.3574088514789304,
+        "p_value": 0.17466809037325362
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9568,
+        "n_control": 9519,
+        "treatment_mean": 0.16638795986622074,
+        "control_mean": 0.09580838323353294,
+        "diff": 0.0705795766326878,
+        "se": 0.004857695637892811,
+        "ci_low": 0.06105866813456056,
+        "ci_high": 0.08010048513081502,
+        "statistic": 14.441271063261025,
+        "p_value": 2.8454580675480867e-47
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9568,
+        "n_control": 9519,
+        "treatment_mean": 0.010869565217391304,
+        "control_mean": 0.005147599537766572,
+        "diff": 0.005721965679624732,
+        "se": 0.0012890587013849987,
+        "ci_low": 0.003195457050952162,
+        "ci_high": 0.008248474308297303,
+        "statistic": 4.43254782643801,
+        "p_value": 9.312603645383249e-06
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9568,
+        "n_control": 9519,
+        "treatment_mean": 1.106294941471572,
+        "control_mean": 0.4905641348881185,
+        "diff": 0.6157308065834535,
+        "se": 0.1765608796918219,
+        "ci_low": 0.26965152897453093,
+        "ci_high": 0.961810084192376,
+        "statistic": 3.4873569256008494,
+        "p_value": 0.0004891358520919582
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9647,
+        "n_control": 9519,
+        "treatment_mean": 0.1697937182543796,
+        "control_mean": 0.09580838323353294,
+        "diff": 0.07398533502084667,
+        "se": 0.004869583834271854,
+        "ci_low": 0.06444112608597537,
+        "ci_high": 0.08352954395571797,
+        "statistic": 15.078906813781598,
+        "p_value": 2.229295155230222e-51
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9647,
+        "n_control": 9519,
+        "treatment_mean": 0.010262257696693273,
+        "control_mean": 0.005147599537766572,
+        "diff": 0.005114658158926701,
+        "se": 0.001261288117236602,
+        "ci_low": 0.002642578875014627,
+        "ci_high": 0.007586737442838775,
+        "statistic": 4.0444631056081,
+        "p_value": 5.2443165782112606e-05
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "womens only",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9647,
+        "n_control": 9519,
+        "treatment_mean": 1.122212086659065,
+        "control_mean": 0.4905641348881185,
+        "diff": 0.6316479517709466,
+        "se": 0.17169419102604813,
+        "ci_low": 0.2951086910803511,
+        "ci_high": 0.968187212461542,
+        "statistic": 3.6789127692451618,
+        "p_value": 0.0002349794331030802
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2181,
+        "n_control": 2149,
+        "treatment_mean": 0.3149931224209078,
+        "control_mean": 0.18054909260120985,
+        "diff": 0.13444402981969797,
+        "se": 0.01295296504519346,
+        "ci_low": 0.10905668483811254,
+        "ci_high": 0.1598313748012834,
+        "statistic": 10.238864170402715,
+        "p_value": 1.3278605258361558e-24
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2181,
+        "n_control": 2149,
+        "treatment_mean": 0.024300779458963778,
+        "control_mean": 0.009306654257794323,
+        "diff": 0.014994125201169455,
+        "se": 0.003893797863329508,
+        "ci_low": 0.007362421625964601,
+        "ci_high": 0.02262582877637431,
+        "statistic": 3.831756179405833,
+        "p_value": 0.00012723179857531596
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2181,
+        "n_control": 2149,
+        "treatment_mean": 3.005130674002751,
+        "control_mean": 1.1801442531409958,
+        "diff": 1.824986420861755,
+        "se": 0.6810458464991533,
+        "ci_low": 0.4897109098862764,
+        "ci_high": 3.1602619318372334,
+        "statistic": 2.679682183281656,
+        "p_value": 0.007402846568264803
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2118,
+        "n_control": 2149,
+        "treatment_mean": 0.2516525023607177,
+        "control_mean": 0.18054909260120985,
+        "diff": 0.07110340975950782,
+        "se": 0.012560343427722411,
+        "ci_low": 0.04648558900771752,
+        "ci_high": 0.09572123051129813,
+        "statistic": 5.644690721219157,
+        "p_value": 1.654784496538743e-08
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2118,
+        "n_control": 2149,
+        "treatment_mean": 0.014636449480642116,
+        "control_mean": 0.009306654257794323,
+        "diff": 0.005329795222847792,
+        "se": 0.0033316281492257356,
+        "ci_low": -0.001200075959514488,
+        "ci_high": 0.011859666405210072,
+        "statistic": 1.601834492483252,
+        "p_value": 0.10919221343017621
+      }
+    },
+    {
+      "segment": "purchase_category",
+      "level": "both",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2118,
+        "n_control": 2149,
+        "treatment_mean": 1.342025495750708,
+        "control_mean": 1.1801442531409958,
+        "diff": 0.16188124260971226,
+        "se": 0.49756959557649416,
+        "ci_low": -0.8136140815088541,
+        "ci_high": 1.1373765667282787,
+        "statistic": 0.3253439198232227,
+        "p_value": 0.7449367530442481
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 7469,
+        "n_control": 7438,
+        "treatment_mean": 0.22278752175659391,
+        "control_mean": 0.13780586179080398,
+        "diff": 0.08498165996578994,
+        "se": 0.006257557706167536,
+        "ci_low": 0.07271707223052049,
+        "ci_high": 0.09724624770105939,
+        "statistic": 13.492244136397012,
+        "p_value": 1.7373078873978952e-41
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 7469,
+        "n_control": 7438,
+        "treatment_mean": 0.01633418128263489,
+        "control_mean": 0.009007797795106211,
+        "diff": 0.007326383487528679,
+        "se": 0.001830669438712448,
+        "ci_low": 0.0037383373200541247,
+        "ci_high": 0.010914429655003234,
+        "statistic": 3.997502908828615,
+        "p_value": 6.401420463269019e-05
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 7469,
+        "n_control": 7438,
+        "treatment_mean": 1.9911487481590573,
+        "control_mean": 0.9435506856681903,
+        "diff": 1.047598062490867,
+        "se": 0.2976774840792253,
+        "ci_low": 0.4641038010248283,
+        "ci_high": 1.6310923239569055,
+        "statistic": 3.5192384997854065,
+        "p_value": 0.0004343429092003721
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 7486,
+        "n_control": 7438,
+        "treatment_mean": 0.1818060379374833,
+        "control_mean": 0.13780586179080398,
+        "diff": 0.04400017614667931,
+        "se": 0.005987059313648161,
+        "ci_low": 0.03226575551862382,
+        "ci_high": 0.0557345967747348,
+        "statistic": 7.333320756463733,
+        "p_value": 2.24518703775496e-13
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 7486,
+        "n_control": 7438,
+        "treatment_mean": 0.011755276516163505,
+        "control_mean": 0.009007797795106211,
+        "diff": 0.002747478721057293,
+        "se": 0.001658910564897147,
+        "ci_low": -0.0005039262397141119,
+        "ci_high": 0.005998883681828698,
+        "statistic": 1.6553451541108337,
+        "p_value": 0.09785450446648446
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "1-3 months",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 7486,
+        "n_control": 7438,
+        "treatment_mean": 1.3021506812717074,
+        "control_mean": 0.9435506856681903,
+        "diff": 0.3585999956035171,
+        "se": 0.24185593084056406,
+        "ci_low": -0.11546850302809436,
+        "ci_high": 0.8326684942351286,
+        "statistic": 1.4827008556590364,
+        "p_value": 0.13817564695404247
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4673,
+        "n_control": 4766,
+        "treatment_mean": 0.18125401241172695,
+        "control_mean": 0.10574905581200168,
+        "diff": 0.07550495659972527,
+        "se": 0.007183240975375742,
+        "ci_low": 0.06142606299571644,
+        "ci_high": 0.08958385020373409,
+        "statistic": 10.472855684795016,
+        "p_value": 1.1511688254154336e-25
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4673,
+        "n_control": 4766,
+        "treatment_mean": 0.010485769313075112,
+        "control_mean": 0.005455308434746118,
+        "diff": 0.005030460878328993,
+        "se": 0.0018326926287396158,
+        "ci_low": 0.0014384493312673092,
+        "ci_high": 0.008622472425390677,
+        "statistic": 2.7522275902879363,
+        "p_value": 0.005919136877609893
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4673,
+        "n_control": 4766,
+        "treatment_mean": 1.0075754333404665,
+        "control_mean": 0.5191879983214435,
+        "diff": 0.48838743501902304,
+        "se": 0.24465679120671174,
+        "ci_low": 0.008800411983419465,
+        "ci_high": 0.9679744580546266,
+        "statistic": 1.9962145036324868,
+        "p_value": 0.04594253298756029
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4753,
+        "n_control": 4766,
+        "treatment_mean": 0.14622343782873976,
+        "control_mean": 0.10574905581200168,
+        "diff": 0.04047438201673807,
+        "se": 0.00679027276062471,
+        "ci_low": 0.02716569196071027,
+        "ci_high": 0.05378307207276588,
+        "statistic": 5.950665815339787,
+        "p_value": 2.6705386292104e-09
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4753,
+        "n_control": 4766,
+        "treatment_mean": 0.007994950557542605,
+        "control_mean": 0.005455308434746118,
+        "diff": 0.0025396421227964865,
+        "se": 0.0016754172633283544,
+        "ci_low": -0.0007441153724037485,
+        "ci_high": 0.0058233996179967214,
+        "statistic": 1.5160319627718695,
+        "p_value": 0.12951127049602446
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "4-6 months",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4753,
+        "n_control": 4766,
+        "treatment_mean": 1.1846707342730907,
+        "control_mean": 0.5191879983214435,
+        "diff": 0.6654827359516472,
+        "se": 0.2834943469091333,
+        "ci_low": 0.10975562908039194,
+        "ci_high": 1.2212098428229026,
+        "statistic": 2.3474285932232375,
+        "p_value": 0.018928980005668748
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4688,
+        "n_control": 4699,
+        "treatment_mean": 0.1523037542662116,
+        "control_mean": 0.08193232602681422,
+        "diff": 0.07037142823939738,
+        "se": 0.006599052603003944,
+        "ci_low": 0.05743752280542435,
+        "ci_high": 0.08330533367337041,
+        "statistic": 10.603093252564532,
+        "p_value": 2.882842771911507e-26
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4688,
+        "n_control": 4699,
+        "treatment_mean": 0.011305460750853242,
+        "control_mean": 0.003404979782932539,
+        "diff": 0.007900480967920703,
+        "se": 0.0017625155547533896,
+        "ci_low": 0.004446013958412425,
+        "ci_high": 0.011354947977428982,
+        "statistic": 4.480511184112933,
+        "p_value": 7.446447755193857e-06
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4688,
+        "n_control": 4699,
+        "treatment_mean": 1.1810238907849828,
+        "control_mean": 0.5759374334964886,
+        "diff": 0.6050864572884942,
+        "se": 0.2759663288751617,
+        "ci_low": 0.06413107692140252,
+        "ci_high": 1.1460418376555859,
+        "statistic": 2.1926097279868366,
+        "p_value": 0.028360515513876042
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4627,
+        "n_control": 4699,
+        "treatment_mean": 0.13572509185217205,
+        "control_mean": 0.08193232602681422,
+        "diff": 0.05379276582535783,
+        "se": 0.006431139606294324,
+        "ci_low": 0.04118796381747185,
+        "ci_high": 0.06639756783324381,
+        "statistic": 8.347192699917388,
+        "p_value": 6.990461399592197e-17
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4627,
+        "n_control": 4699,
+        "treatment_mean": 0.006699805489518046,
+        "control_mean": 0.003404979782932539,
+        "diff": 0.0032948257065855075,
+        "se": 0.0014698400931644668,
+        "ci_low": 0.00041399206095015396,
+        "ci_high": 0.006175659352220861,
+        "statistic": 2.246638035649075,
+        "p_value": 0.024663169281789687
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "7-9 months",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4627,
+        "n_control": 4699,
+        "treatment_mean": 0.8754268424465096,
+        "control_mean": 0.5759374334964886,
+        "diff": 0.29948940895002096,
+        "se": 0.2795757953889733,
+        "ci_low": -0.248542461267784,
+        "ci_high": 0.8475212791678259,
+        "statistic": 1.0712279599646382,
+        "p_value": 0.28409554250933006
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4477,
+        "n_control": 4403,
+        "treatment_mean": 0.1494304221576949,
+        "control_mean": 0.07903702021349081,
+        "diff": 0.07039340194420408,
+        "se": 0.006702366154561014,
+        "ci_low": 0.057257005670064275,
+        "ci_high": 0.08352979821834389,
+        "statistic": 10.414818662521231,
+        "p_value": 2.122015962764017e-25
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4477,
+        "n_control": 4403,
+        "treatment_mean": 0.009604645968282331,
+        "control_mean": 0.0029525323642970703,
+        "diff": 0.0066521136039852605,
+        "se": 0.001671322421894334,
+        "ci_low": 0.0033763818505181077,
+        "ci_high": 0.009927845357452413,
+        "statistic": 3.959198415822095,
+        "p_value": 7.52017412777142e-05
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4477,
+        "n_control": 4403,
+        "treatment_mean": 1.1603216439580077,
+        "control_mean": 0.3882398364751306,
+        "diff": 0.7720818074828771,
+        "se": 0.28705735393133214,
+        "ci_low": 0.2093596911132748,
+        "ci_high": 1.3348039238524794,
+        "statistic": 2.689643017010354,
+        "p_value": 0.007170287878431619
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4521,
+        "n_control": 4403,
+        "treatment_mean": 0.12253926122539262,
+        "control_mean": 0.07903702021349081,
+        "diff": 0.04350224101190181,
+        "se": 0.006349413170905364,
+        "ci_low": 0.031057619873963032,
+        "ci_high": 0.055946862149840584,
+        "statistic": 6.816138549412462,
+        "p_value": 9.352010857073804e-12
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 4521,
+        "n_control": 4403,
+        "treatment_mean": 0.007078080070780801,
+        "control_mean": 0.0029525323642970703,
+        "diff": 0.004125547706483731,
+        "se": 0.0014910104246412348,
+        "ci_low": 0.001203220973613138,
+        "ci_high": 0.007047874439354325,
+        "statistic": 2.7508360405473016,
+        "p_value": 0.0059443387637431976
+      }
+    },
+    {
+      "segment": "recency_band",
+      "level": "10-12 months",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 4521,
+        "n_control": 4403,
+        "treatment_mean": 0.7982459632824596,
+        "control_mean": 0.3882398364751306,
+        "diff": 0.41000612680732895,
+        "se": 0.22030885864669034,
+        "ci_low": -0.021853241969839066,
+        "ci_high": 0.841865495584497,
+        "statistic": 1.8610514771212918,
+        "p_value": 0.06277165708612872
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 12415,
+        "n_control": 12448,
+        "treatment_mean": 0.15594039468385018,
+        "control_mean": 0.08724293059125963,
+        "diff": 0.06869746409259055,
+        "se": 0.00412299313771134,
+        "ci_low": 0.06061654603417053,
+        "ci_high": 0.07677838215101057,
+        "statistic": 16.57513724307967,
+        "p_value": 1.0542196904674218e-61
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 12415,
+        "n_control": 12448,
+        "treatment_mean": 0.00910189287152638,
+        "control_mean": 0.004177377892030848,
+        "diff": 0.004924514979495531,
+        "se": 0.0010298777728554138,
+        "ci_low": 0.002905991636220597,
+        "ci_high": 0.006943038322770465,
+        "statistic": 4.781790163800348,
+        "p_value": 1.7374098787287684e-06
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 12415,
+        "n_control": 12448,
+        "treatment_mean": 1.0823689085783328,
+        "control_mean": 0.4803751606683805,
+        "diff": 0.6019937479099523,
+        "se": 0.1662956419571068,
+        "ci_low": 0.27604116736736484,
+        "ci_high": 0.9279463284525398,
+        "statistic": 3.6200211913263884,
+        "p_value": 0.0002952834174912811
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 12361,
+        "n_control": 12448,
+        "treatment_mean": 0.13235175147641776,
+        "control_mean": 0.08724293059125963,
+        "diff": 0.04510882088515812,
+        "se": 0.003960710445315054,
+        "ci_low": 0.03734597105914901,
+        "ci_high": 0.05287167071116723,
+        "statistic": 11.366592005767918,
+        "p_value": 6.133590896618093e-30
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 12361,
+        "n_control": 12448,
+        "treatment_mean": 0.007928161152010355,
+        "control_mean": 0.004177377892030848,
+        "diff": 0.0037507832599795073,
+        "se": 0.0009851317118041557,
+        "ci_low": 0.0018199605848150694,
+        "ci_high": 0.005681605935143945,
+        "statistic": 3.810393536397725,
+        "p_value": 0.00013874575304447092
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "under $200",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 12361,
+        "n_control": 12448,
+        "treatment_mean": 1.042740878569695,
+        "control_mean": 0.4803751606683805,
+        "diff": 0.5623657179013145,
+        "se": 0.15967924279900372,
+        "ci_low": 0.24938234329221148,
+        "ci_high": 0.8753490925104175,
+        "statistic": 3.521846096234264,
+        "p_value": 0.00042945031165607356
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 6187,
+        "n_control": 6168,
+        "treatment_mean": 0.22046225957653143,
+        "control_mean": 0.13456549935149156,
+        "diff": 0.08589676022503986,
+        "se": 0.006830689444432029,
+        "ci_low": 0.07250885492437517,
+        "ci_high": 0.09928466552570456,
+        "statistic": 12.491766622346445,
+        "p_value": 8.279451233808544e-36
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 6187,
+        "n_control": 6168,
+        "treatment_mean": 0.016971068369161145,
+        "control_mean": 0.008430609597924773,
+        "diff": 0.008540458771236372,
+        "se": 0.0020129023159253176,
+        "ci_low": 0.0045952427276254836,
+        "ci_high": 0.012485674814847261,
+        "statistic": 4.2376069789458235,
+        "p_value": 2.259147840868121e-05
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 6187,
+        "n_control": 6168,
+        "treatment_mean": 1.8455956036851462,
+        "control_mean": 0.959529831387808,
+        "diff": 0.8860657722973382,
+        "se": 0.313490320231834,
+        "ci_low": 0.27156980972519673,
+        "ci_high": 1.5005617348694797,
+        "statistic": 2.8264533706880335,
+        "p_value": 0.004714974326097352
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 6343,
+        "n_control": 6168,
+        "treatment_mean": 0.17215828472331704,
+        "control_mean": 0.13456549935149156,
+        "diff": 0.03759278537182548,
+        "se": 0.006430378786725795,
+        "ci_low": 0.024989474542892548,
+        "ci_high": 0.050196096200758406,
+        "statistic": 5.829964223430259,
+        "p_value": 5.543926058109199e-09
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 6343,
+        "n_control": 6168,
+        "treatment_mean": 0.007252088916916285,
+        "control_mean": 0.008430609597924773,
+        "diff": -0.0011785206810084872,
+        "se": 0.0015780802476928443,
+        "ci_low": -0.004271501131200511,
+        "ci_high": 0.0019144597691835362,
+        "statistic": -0.7475691013949528,
+        "p_value": 0.4547201078751454
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$200-$500",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 6343,
+        "n_control": 6168,
+        "treatment_mean": 0.7130994797414474,
+        "control_mean": 0.959529831387808,
+        "diff": -0.24643035164636062,
+        "se": 0.2328651568350028,
+        "ci_low": -0.7028846137630753,
+        "ci_high": 0.210023910470354,
+        "statistic": -1.0582534329984348,
+        "p_value": 0.2899616356365672
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2705,
+        "n_control": 2690,
+        "treatment_mean": 0.21959334565619223,
+        "control_mean": 0.12862453531598514,
+        "diff": 0.0909688103402071,
+        "se": 0.010247895150485197,
+        "ci_low": 0.07088330492791342,
+        "ci_high": 0.11105431575250077,
+        "statistic": 8.807653755958167,
+        "p_value": 1.2779245221682577e-18
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2705,
+        "n_control": 2690,
+        "treatment_mean": 0.01811460258780037,
+        "control_mean": 0.006691449814126394,
+        "diff": 0.011423152773673978,
+        "se": 0.003007704297937469,
+        "ci_low": 0.005528160673570209,
+        "ci_high": 0.017318144873777745,
+        "statistic": 3.7881047076444663,
+        "p_value": 0.00015180087630370755
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2705,
+        "n_control": 2690,
+        "treatment_mean": 2.016776340110906,
+        "control_mean": 0.7473011152416357,
+        "diff": 1.2694752248692702,
+        "se": 0.46111630291100536,
+        "ci_low": 0.36545674759269675,
+        "ci_high": 2.173493702145844,
+        "statistic": 2.7530478034611514,
+        "p_value": 0.005928402769663974
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2683,
+        "n_control": 2690,
+        "treatment_mean": 0.19008572493477452,
+        "control_mean": 0.12862453531598514,
+        "diff": 0.06146118961878938,
+        "se": 0.009952210587982017,
+        "ci_low": 0.04195521529978643,
+        "ci_high": 0.08096716393779232,
+        "statistic": 6.155083246061838,
+        "p_value": 7.503806971634236e-10
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2683,
+        "n_control": 2690,
+        "treatment_mean": 0.016772269847185987,
+        "control_mean": 0.006691449814126394,
+        "diff": 0.010080820033059594,
+        "se": 0.0029355316147988016,
+        "ci_low": 0.004327283792575234,
+        "ci_high": 0.015834356273543952,
+        "statistic": 3.4322050261639125,
+        "p_value": 0.000598694764097457
+      }
+    },
+    {
+      "segment": "history_tier",
+      "level": "$500 and over",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2683,
+        "n_control": 2690,
+        "treatment_mean": 2.0967573611628776,
+        "control_mean": 0.7473011152416357,
+        "diff": 1.349456245921242,
+        "se": 0.48903985303513775,
+        "ci_low": 0.3906790241375383,
+        "ci_high": 2.308233467704946,
+        "statistic": 2.7593993363650937,
+        "p_value": 0.005815911294926197
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9240,
+        "n_control": 9327,
+        "treatment_mean": 0.16277056277056276,
+        "control_mean": 0.0871662914120296,
+        "diff": 0.07560427135853316,
+        "se": 0.004824881865990625,
+        "ci_low": 0.06614767667153112,
+        "ci_high": 0.0850608660455352,
+        "statistic": 15.585992946204218,
+        "p_value": 9.064385742102259e-55
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9240,
+        "n_control": 9327,
+        "treatment_mean": 0.010822510822510822,
+        "control_mean": 0.005360780529645117,
+        "diff": 0.005461730292865705,
+        "se": 0.0013153971072770553,
+        "ci_low": 0.0028835993372345065,
+        "ci_high": 0.008039861248496904,
+        "statistic": 4.15674151972899,
+        "p_value": 3.228188752852337e-05
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9240,
+        "n_control": 9327,
+        "treatment_mean": 1.2085270562770565,
+        "control_mean": 0.6444526643079231,
+        "diff": 0.5640743919691333,
+        "se": 0.2055719893237045,
+        "ci_low": 0.16113186952325664,
+        "ci_high": 0.96701691441501,
+        "statistic": 2.7439263190711847,
+        "p_value": 0.00607731323259032
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9454,
+        "n_control": 9327,
+        "treatment_mean": 0.13179606515760525,
+        "control_mean": 0.0871662914120296,
+        "diff": 0.044629773745575654,
+        "se": 0.004542510396352353,
+        "ci_low": 0.035726616969326275,
+        "ci_high": 0.053532930521825034,
+        "statistic": 9.78792304135211,
+        "p_value": 1.2687522689495122e-22
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9454,
+        "n_control": 9327,
+        "treatment_mean": 0.00708694732388407,
+        "control_mean": 0.005360780529645117,
+        "diff": 0.0017261667942389536,
+        "se": 0.001147166015076057,
+        "ci_low": -0.0005222372795984512,
+        "ci_high": 0.003974570868076358,
+        "statistic": 1.5032306005260117,
+        "p_value": 0.132779589111393
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Phone",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9454,
+        "n_control": 9327,
+        "treatment_mean": 0.8769261688174319,
+        "control_mean": 0.6444526643079231,
+        "diff": 0.23247350450950877,
+        "se": 0.17942853576952061,
+        "ci_low": -0.11922279108584893,
+        "ci_high": 0.5841698001048665,
+        "statistic": 1.2956328463167388,
+        "p_value": 0.19511804469875108
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9490,
+        "n_control": 9373,
+        "treatment_mean": 0.19441517386722867,
+        "control_mean": 0.11885202176464313,
+        "diff": 0.07556315210258555,
+        "se": 0.005260860058782457,
+        "ci_low": 0.06525205585966666,
+        "ci_high": 0.08587424834550443,
+        "statistic": 14.267970315957955,
+        "p_value": 3.4651779435995535e-46
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9490,
+        "n_control": 9373,
+        "treatment_mean": 0.012961011591148578,
+        "control_mean": 0.005761229062199936,
+        "diff": 0.007199782528948642,
+        "se": 0.0013997050054511137,
+        "ci_low": 0.004456411129284018,
+        "ci_high": 0.009943153928613266,
+        "statistic": 5.128051408649384,
+        "p_value": 2.9275650865096914e-07
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9490,
+        "n_control": 9373,
+        "treatment_mean": 1.5218345626975762,
+        "control_mean": 0.6713858956577403,
+        "diff": 0.8504486670398359,
+        "se": 0.23125845884025434,
+        "ci_low": 0.39715602742185485,
+        "ci_high": 1.303741306657817,
+        "statistic": 3.677481339730356,
+        "p_value": 0.00023632177099869604
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9354,
+        "n_control": 9373,
+        "treatment_mean": 0.16452854393842206,
+        "control_mean": 0.11885202176464313,
+        "diff": 0.04567652217377893,
+        "se": 0.005086096776309726,
+        "ci_low": 0.0357079556703266,
+        "ci_high": 0.055645088677231266,
+        "statistic": 8.962610409118957,
+        "p_value": 3.17081250384099e-19
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9354,
+        "n_control": 9373,
+        "treatment_mean": 0.009193927731451786,
+        "control_mean": 0.005761229062199936,
+        "diff": 0.0034326986692518498,
+        "se": 0.0012589565979448962,
+        "ci_low": 0.0009651890791807795,
+        "ci_high": 0.00590020825932292,
+        "statistic": 2.7267110045982017,
+        "p_value": 0.006396903809730836
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Web",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9354,
+        "n_control": 9373,
+        "treatment_mean": 1.087702587128501,
+        "control_mean": 0.6713858956577403,
+        "diff": 0.4163166914707608,
+        "se": 0.19987893605073867,
+        "ci_low": 0.024534367161946347,
+        "ci_high": 0.8080990157795752,
+        "statistic": 2.082844244103241,
+        "p_value": 0.037279752498983895
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2577,
+        "n_control": 2606,
+        "treatment_mean": 0.21148622429181219,
+        "control_mean": 0.12854950115118957,
+        "diff": 0.08293672314062261,
+        "se": 0.01037776384355504,
+        "ci_low": 0.06259667976719277,
+        "ci_high": 0.10327676651405246,
+        "statistic": 7.95160654489583,
+        "p_value": 1.841081833397071e-15
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2577,
+        "n_control": 2606,
+        "treatment_mean": 0.017074117190531625,
+        "control_mean": 0.006907137375287797,
+        "diff": 0.010166979815243827,
+        "se": 0.0030240073996066976,
+        "ci_low": 0.004240034223032075,
+        "ci_high": 0.016093925407455578,
+        "statistic": 3.36630721614634,
+        "p_value": 0.0007618181165847434
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2577,
+        "n_control": 2606,
+        "treatment_mean": 1.824870003880481,
+        "control_mean": 0.6157405986185724,
+        "diff": 1.2091294052619086,
+        "se": 0.4173863409053573,
+        "ci_low": 0.39081335681972995,
+        "ci_high": 2.0274454537040874,
+        "statistic": 2.896906982243771,
+        "p_value": 0.0037895856589336774
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2579,
+        "n_control": 2606,
+        "treatment_mean": 0.17564947654129506,
+        "control_mean": 0.12854950115118957,
+        "diff": 0.04709997539010549,
+        "se": 0.009956489514856845,
+        "ci_low": 0.027585614528535394,
+        "ci_high": 0.0666143362516756,
+        "statistic": 4.723529105850376,
+        "p_value": 2.317867682316498e-06
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 2579,
+        "n_control": 2606,
+        "treatment_mean": 0.013958898797983715,
+        "control_mean": 0.006907137375287797,
+        "diff": 0.0070517614226959175,
+        "se": 0.0028229662627743514,
+        "ci_low": 0.0015188492180865532,
+        "ci_high": 0.012584673627305282,
+        "statistic": 2.5008461814571703,
+        "p_value": 0.01238969776393469
+      }
+    },
+    {
+      "segment": "channel",
+      "level": "Multichannel",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 2579,
+        "n_control": 2606,
+        "treatment_mean": 1.7732764637456377,
+        "control_mean": 0.6157405986185724,
+        "diff": 1.1575358651270653,
+        "se": 0.4585053376898443,
+        "ci_low": 0.25858427374935355,
+        "ci_high": 2.056487456504777,
+        "statistic": 2.5245853646093863,
+        "p_value": 0.011625472703167513
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 8563,
+        "n_control": 8542,
+        "treatment_mean": 0.17645684923508118,
+        "control_mean": 0.0968157340201358,
+        "diff": 0.07964111521494538,
+        "se": 0.005216074487963975,
+        "ci_low": 0.06941779707785778,
+        "ci_high": 0.08986443335203298,
+        "statistic": 15.160839034764175,
+        "p_value": 6.424336334955636e-52
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 8563,
+        "n_control": 8542,
+        "treatment_mean": 0.012262057690061895,
+        "control_mean": 0.005619292905642706,
+        "diff": 0.006642764784419188,
+        "se": 0.0014382519344837935,
+        "ci_low": 0.0038238427921358908,
+        "ci_high": 0.009461686776702486,
+        "statistic": 4.61367482844101,
+        "p_value": 3.956111962968045e-06
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 8563,
+        "n_control": 8542,
+        "treatment_mean": 1.328512203666939,
+        "control_mean": 0.5920053851557012,
+        "diff": 0.7365068185112378,
+        "se": 0.21710426242975345,
+        "ci_low": 0.31095522406599424,
+        "ci_high": 1.1620584129564813,
+        "statistic": 3.3924106798665132,
+        "p_value": 0.0006946326294116112
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 8556,
+        "n_control": 8542,
+        "treatment_mean": 0.14375876577840113,
+        "control_mean": 0.0968157340201358,
+        "diff": 0.046943031758265336,
+        "se": 0.004962198684105056,
+        "ci_low": 0.037217301053287376,
+        "ci_high": 0.056668762463243295,
+        "statistic": 9.434164854755654,
+        "p_value": 3.94121300749345e-21
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 8556,
+        "n_control": 8542,
+        "treatment_mean": 0.009233286582515194,
+        "control_mean": 0.005619292905642706,
+        "diff": 0.003613993676872488,
+        "se": 0.0013127609160034875,
+        "ci_low": 0.0010410295611938407,
+        "ci_high": 0.006186957792551136,
+        "statistic": 2.7518175686881103,
+        "p_value": 0.005926552614843018
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Urban",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 8556,
+        "n_control": 8542,
+        "treatment_mean": 1.2611407199625992,
+        "control_mean": 0.5920053851557012,
+        "diff": 0.669135334806898,
+        "se": 0.2147342223082235,
+        "ci_low": 0.24822960561856466,
+        "ci_high": 1.0900410639952314,
+        "statistic": 3.1161094287357693,
+        "p_value": 0.0018360443199288627
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9501,
+        "n_control": 9625,
+        "treatment_mean": 0.1733501736659299,
+        "control_mean": 0.09901298701298701,
+        "diff": 0.07433718665294288,
+        "se": 0.004934685612805723,
+        "ci_low": 0.0646653805768157,
+        "ci_high": 0.08400899272907006,
+        "statistic": 14.997976767640095,
+        "p_value": 7.569161037881486e-51
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9501,
+        "n_control": 9625,
+        "treatment_mean": 0.012419745289969477,
+        "control_mean": 0.004987012987012987,
+        "diff": 0.00743273230295649,
+        "se": 0.0013440670223332258,
+        "ci_low": 0.004798409346375375,
+        "ci_high": 0.010067055259537605,
+        "statistic": 5.540798860421564,
+        "p_value": 3.0109490019045204e-08
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9501,
+        "n_control": 9625,
+        "treatment_mean": 1.4732901799810545,
+        "control_mean": 0.669442077922078,
+        "diff": 0.8038481020589765,
+        "se": 0.22943876149340856,
+        "ci_low": 0.35412361086145056,
+        "ci_high": 1.2535725932565025,
+        "statistic": 3.503540974623287,
+        "p_value": 0.00046032414511103963
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9650,
+        "n_control": 9625,
+        "treatment_mean": 0.14787564766839378,
+        "control_mean": 0.09901298701298701,
+        "diff": 0.04886266065540677,
+        "se": 0.004725079911906018,
+        "ci_low": 0.03960167420399728,
+        "ci_high": 0.058123647106816265,
+        "statistic": 10.31028698350417,
+        "p_value": 6.33119780414316e-25
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 9650,
+        "n_control": 9625,
+        "treatment_mean": 0.0075647668393782385,
+        "control_mean": 0.004987012987012987,
+        "diff": 0.0025777538523652516,
+        "se": 0.0011373349683999445,
+        "ci_low": 0.0003486182759433595,
+        "ci_high": 0.004806889428787144,
+        "statistic": 2.265584354963777,
+        "p_value": 0.023476843873356017
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Suburban",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 9650,
+        "n_control": 9625,
+        "treatment_mean": 0.8466134715025907,
+        "control_mean": 0.669442077922078,
+        "diff": 0.1771713935805127,
+        "se": 0.1891658924903792,
+        "ci_low": -0.19361042142596413,
+        "ci_high": 0.5479532085869896,
+        "statistic": 0.9365926978063631,
+        "p_value": 0.3489799425355112
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 3243,
+        "n_control": 3139,
+        "treatment_mean": 0.22695035460992907,
+        "control_mean": 0.15355208665179992,
+        "diff": 0.07339826795812915,
+        "se": 0.009772685793567548,
+        "ci_low": 0.05424415577051051,
+        "ci_high": 0.09255238014574779,
+        "statistic": 7.4596179064899815,
+        "p_value": 8.677374825310259e-14
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 3243,
+        "n_control": 3139,
+        "treatment_mean": 0.013567684242984891,
+        "control_mean": 0.00828289264096846,
+        "diff": 0.00528479160201643,
+        "se": 0.002596876650801305,
+        "ci_low": 0.00019500689415287258,
+        "ci_high": 0.010374576309879988,
+        "statistic": 2.0264826192063325,
+        "p_value": 0.04271535206467496
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 3243,
+        "n_control": 3139,
+        "treatment_mean": 1.5226364477335799,
+        "control_mean": 0.7671360305829882,
+        "diff": 0.7555004171505917,
+        "se": 0.3594787986267865,
+        "ci_low": 0.0507734399518639,
+        "ci_high": 1.4602273943493196,
+        "statistic": 2.1016550072955975,
+        "p_value": 0.0356307473725496
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 3181,
+        "n_control": 3139,
+        "treatment_mean": 0.182646966362779,
+        "control_mean": 0.15355208665179992,
+        "diff": 0.02909487971097907,
+        "se": 0.009398775777847378,
+        "ci_low": 0.010673617687630775,
+        "ci_high": 0.04751614173432737,
+        "statistic": 3.091839752979621,
+        "p_value": 0.0019892020093237083
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 3181,
+        "n_control": 3139,
+        "treatment_mean": 0.011631562401760453,
+        "control_mean": 0.00828289264096846,
+        "diff": 0.003348669760791992,
+        "se": 0.0024961752012155687,
+        "ci_low": -0.0015437437326925466,
+        "ci_high": 0.00824108325427653,
+        "statistic": 1.3398463568683365,
+        "p_value": 0.18029530100656066
+      }
+    },
+    {
+      "segment": "zip_area",
+      "level": "Rural",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 3181,
+        "n_control": 3139,
+        "treatment_mean": 1.2819773656082991,
+        "control_mean": 0.7671360305829882,
+        "diff": 0.5148413350253109,
+        "se": 0.3236710776550377,
+        "ci_low": -0.11967811188763322,
+        "ci_high": 1.1493607819382552,
+        "statistic": 1.5906312629329789,
+        "p_value": 0.11174847457671437
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10686,
+        "n_control": 10695,
+        "treatment_mean": 0.1541268950028074,
+        "control_mean": 0.0788218793828892,
+        "diff": 0.0753050156199182,
+        "se": 0.004357671660849307,
+        "ci_low": 0.06676413610820271,
+        "ci_high": 0.0838458951316337,
+        "statistic": 17.16361410215667,
+        "p_value": 4.972100373492291e-66
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10686,
+        "n_control": 10695,
+        "treatment_mean": 0.011136065880591428,
+        "control_mean": 0.0037400654511453952,
+        "diff": 0.007396000429446033,
+        "se": 0.0011742685304044174,
+        "ci_low": 0.005094476401674597,
+        "ci_high": 0.00969752445721747,
+        "statistic": 6.293861714411089,
+        "p_value": 3.096637165894219e-10
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 10686,
+        "n_control": 10695,
+        "treatment_mean": 1.3324677147669848,
+        "control_mean": 0.37244787283777464,
+        "diff": 0.9600198419292101,
+        "se": 0.18685151827383872,
+        "ci_low": 0.5937689318257573,
+        "ci_high": 1.3262707520326629,
+        "statistic": 5.137875521687016,
+        "p_value": 2.8124216314196146e-07
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10763,
+        "n_control": 10695,
+        "treatment_mean": 0.1292390597417077,
+        "control_mean": 0.0788218793828892,
+        "diff": 0.05041718035881851,
+        "se": 0.004152699184950404,
+        "ci_low": 0.042278039517686876,
+        "ci_high": 0.05855632119995014,
+        "statistic": 12.091126791944266,
+        "p_value": 1.1766181479965008e-33
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10763,
+        "n_control": 10695,
+        "treatment_mean": 0.009012357149493635,
+        "control_mean": 0.0037400654511453952,
+        "diff": 0.00527229169834824,
+        "se": 0.0010854464828323929,
+        "ci_low": 0.003144855684851075,
+        "ci_high": 0.007399727711845404,
+        "statistic": 4.848272780296089,
+        "p_value": 1.2454107165078662e-06
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "new",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 10763,
+        "n_control": 10695,
+        "treatment_mean": 1.1047356684939145,
+        "control_mean": 0.37244787283777464,
+        "diff": 0.7322877956561398,
+        "se": 0.1689258432431204,
+        "ci_low": 0.40117531349549407,
+        "ci_high": 1.0634002778167855,
+        "statistic": 4.334966051359123,
+        "p_value": 1.4663264622056562e-05
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 1,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10621,
+        "n_control": 10611,
+        "treatment_mean": 0.21156199981169382,
+        "control_mean": 0.13372914899632457,
+        "diff": 0.07783285081536925,
+        "se": 0.005159706777949183,
+        "ci_low": 0.06772001135980164,
+        "ci_high": 0.08794569027093686,
+        "statistic": 15.003292724971542,
+        "p_value": 6.986559274684659e-51
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 1,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10621,
+        "n_control": 10611,
+        "treatment_mean": 0.013934657753507202,
+        "control_mean": 0.007727829610781264,
+        "diff": 0.006206828142725938,
+        "se": 0.001419987915667753,
+        "ci_low": 0.003423702969535042,
+        "ci_high": 0.008989953315916835,
+        "statistic": 4.368494467054197,
+        "p_value": 1.2510598620759528e-05
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 1,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 10621,
+        "n_control": 10611,
+        "treatment_mean": 1.5133170134638925,
+        "control_mean": 0.9353501083780982,
+        "diff": 0.5779669050857943,
+        "se": 0.22264348682288812,
+        "ci_low": 0.1415672768590876,
+        "ci_high": 1.014366533312501,
+        "statistic": 2.5959299925335984,
+        "p_value": 0.009440424495721855
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 2,
+      "metric": "visit",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10624,
+        "n_control": 10611,
+        "treatment_mean": 0.17385165662650603,
+        "control_mean": 0.13372914899632457,
+        "diff": 0.040122507630181464,
+        "se": 0.004943342865577236,
+        "ci_low": 0.030433733650417055,
+        "ci_high": 0.04981128160994587,
+        "statistic": 8.103382603235834,
+        "p_value": 5.345180430816383e-16
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 2,
+      "metric": "conversion",
+      "estimate": {
+        "method": "two-proportion z-test",
+        "n_treatment": 10624,
+        "n_control": 10611,
+        "treatment_mean": 0.008659638554216868,
+        "control_mean": 0.007727829610781264,
+        "diff": 0.0009318089434356032,
+        "se": 0.0012372145074927006,
+        "ci_low": -0.0014930869324005515,
+        "ci_high": 0.003356704819271758,
+        "statistic": 0.753114617706212,
+        "p_value": 0.4513810410852427
+      }
+    },
+    {
+      "segment": "tenure",
+      "level": "returning",
+      "arm": 2,
+      "metric": "spend",
+      "estimate": {
+        "method": "Welch t-test",
+        "n_treatment": 10624,
+        "n_control": 10611,
+        "treatment_mean": 1.0493072289156626,
+        "control_mean": 0.9353501083780982,
+        "diff": 0.11395712053756446,
+        "se": 0.1986901016040254,
+        "ci_low": -0.27549059229949474,
+        "ci_high": 0.5034048333746237,
+        "statistic": 0.5735420114922107,
+        "p_value": 0.5662838556814719
+      }
+    }
+  ],
+  "segment_tests": [
+    {
+      "segment": "purchase_category",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 23.246724976344083,
+        "df": 2,
+        "p_value": 8.954427205293245e-06,
+        "levels_used": 3
+      },
+      "p_holm": 0.00031340495218526356
+    },
+    {
+      "segment": "purchase_category",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 5.2315623201671695,
+        "df": 2,
+        "p_value": 0.07311065525813461,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "purchase_category",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 2.9552220250555017,
+        "df": 2,
+        "p_value": 0.22818216208103978,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "purchase_category",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 97.34986879793351,
+        "df": 2,
+        "p_value": 7.256790468806521e-22,
+        "levels_used": 3
+      },
+      "p_holm": 2.6124445687703476e-20
+    },
+    {
+      "segment": "purchase_category",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 7.846494342702437,
+        "df": 2,
+        "p_value": 0.01977677180026928,
+        "levels_used": 3
+      },
+      "p_holm": 0.5933031540080784
+    },
+    {
+      "segment": "purchase_category",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 2.1416417045491225,
+        "df": 2,
+        "p_value": 0.342727073624682,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 3.479136550916438,
+        "df": 3,
+        "p_value": 0.3234781383928654,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 1.4089532305627592,
+        "df": 3,
+        "p_value": 0.7034373926946751,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 2.2929771881939693,
+        "df": 3,
+        "p_value": 0.5138676262246702,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 2.372264395100424,
+        "df": 3,
+        "p_value": 0.49881847821132197,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 0.6170108282604292,
+        "df": 3,
+        "p_value": 0.8925273291927219,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "recency_band",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 1.0010734505460492,
+        "df": 3,
+        "p_value": 0.8009922133197662,
+        "levels_used": 4
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "history_tier",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 7.307281844562884,
+        "df": 2,
+        "p_value": 0.02589666916327315,
+        "levels_used": 3
+      },
+      "p_holm": 0.7510034057349213
+    },
+    {
+      "segment": "history_tier",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 5.899786076294602,
+        "df": 2,
+        "p_value": 0.05234530459976607,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "history_tier",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 2.2041286917087985,
+        "df": 2,
+        "p_value": 0.3321846314376148,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "history_tier",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 4.063076501555701,
+        "df": 2,
+        "p_value": 0.13113364948535444,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "history_tier",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 13.405791925983879,
+        "df": 2,
+        "p_value": 0.0012273523839619182,
+        "levels_used": 3
+      },
+      "p_holm": 0.04172998105470522
+    },
+    {
+      "segment": "history_tier",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 12.46880740688833,
+        "df": 2,
+        "p_value": 0.001960798082938947,
+        "levels_used": 3
+      },
+      "p_holm": 0.06470633673698525
+    },
+    {
+      "segment": "channel",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 0.44909186233140574,
+        "df": 2,
+        "p_value": 0.7988788824188979,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "channel",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 2.3225560079087852,
+        "df": 2,
+        "p_value": 0.3130858002023313,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "channel",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 2.216413157973059,
+        "df": 2,
+        "p_value": 0.3301505293480867,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "channel",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 0.05993237622145227,
+        "df": 2,
+        "p_value": 0.9704783467001691,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "channel",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 3.388250245652126,
+        "df": 2,
+        "p_value": 0.18375992608719136,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "channel",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 3.584774354181324,
+        "df": 2,
+        "p_value": 0.16656208151745977,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 0.6550882912249137,
+        "df": 2,
+        "p_value": 0.7206914752067106,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 0.5719354668384842,
+        "df": 2,
+        "p_value": 0.7512868570138399,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 0.046516411996327,
+        "df": 2,
+        "p_value": 0.9770101813125928,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 3.631923181884278,
+        "df": 2,
+        "p_value": 0.16268140019294425,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 0.3712346097800288,
+        "df": 2,
+        "p_value": 0.8305913974335258,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "zip_area",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 3.075910259901441,
+        "df": 2,
+        "p_value": 0.21481993144268174,
+        "levels_used": 3
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "tenure",
+      "arm": 1,
+      "metric": "visit",
+      "cochran": {
+        "q": 0.14009401253269016,
+        "df": 1,
+        "p_value": 0.7081875690073638,
+        "levels_used": 2
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "tenure",
+      "arm": 1,
+      "metric": "conversion",
+      "cochran": {
+        "q": 0.4164999500250801,
+        "df": 1,
+        "p_value": 0.518688688047923,
+        "levels_used": 2
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "tenure",
+      "arm": 1,
+      "metric": "spend",
+      "cochran": {
+        "q": 1.7277249742556744,
+        "df": 1,
+        "p_value": 0.18870170030501673,
+        "levels_used": 2
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "tenure",
+      "arm": 2,
+      "metric": "visit",
+      "cochran": {
+        "q": 2.542618703123387,
+        "df": 1,
+        "p_value": 0.1108108662576079,
+        "levels_used": 2
+      },
+      "p_holm": 1.0
+    },
+    {
+      "segment": "tenure",
+      "arm": 2,
+      "metric": "conversion",
+      "cochran": {
+        "q": 6.954791108237096,
+        "df": 1,
+        "p_value": 0.008359505907323119,
+        "levels_used": 2
+      },
+      "p_holm": 0.2675041890343398
+    },
+    {
+      "segment": "tenure",
+      "arm": 2,
+      "metric": "spend",
+      "cochran": {
+        "q": 5.621409226500557,
+        "df": 1,
+        "p_value": 0.017742377195475688,
+        "levels_used": 2
+      },
+      "p_holm": 0.5500136930597463
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "schema",
+      "passed": true,
+      "detail": "24 typed columns"
+    },
+    {
+      "name": "row count",
+      "passed": true,
+      "detail": "64,000 rows (expected 64,000)"
+    },
+    {
+      "name": "no nulls",
+      "passed": true,
+      "detail": "no NULLs in any column"
+    },
+    {
+      "name": "unique customer_id",
+      "passed": true,
+      "detail": "0 duplicate ids"
+    },
+    {
+      "name": "arm is 0, 1 or 2",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "recency is 1 to 12 months",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "history is positive",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "spend is non-negative",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "flags are 0 or 1",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "zip_area is a known level",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "channel is a known level",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "a conversion implies a visit",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "spend is positive exactly when the customer converted",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "exactly one zip and one channel indicator",
+      "passed": true,
+      "detail": "all rows pass"
+    },
+    {
+      "name": "stratified split",
+      "passed": true,
+      "detail": "test share within 0.01 of 0.3 in every arm"
+    },
+    {
+      "name": "no sample-ratio mismatch",
+      "passed": true,
+      "detail": "arm sizes (21306, 21307, 21387), chi2=0.203, p=0.9037 (fails below 0.001)"
+    },
+    {
+      "name": "covariates balanced",
+      "passed": true,
+      "detail": "largest |SMD| is 0.0137 (zip_rural, Mens email); threshold 0.1"
+    }
+  ],
+  "migrations": [
+    {
+      "version": 1,
+      "name": "load_raw",
+      "sha256": "157188788bfc079f7123e7691a243b2a866544b922815024638e77ebdc62e8a9"
+    },
+    {
+      "version": 2,
+      "name": "customers",
+      "sha256": "2705f4fb062d11a3f80564accfb7882e0b1f8e8e85fd16d2baf96bbb615decd7"
+    },
+    {
+      "version": 3,
+      "name": "features",
+      "sha256": "e44bef12a5368c6c74d7b1dadfd2ccef2578d365c44ba78b68ae78604b9d2345"
+    },
+    {
+      "version": 4,
+      "name": "split",
+      "sha256": "99caf9814fc42e320bbef3403ad03aeedb5295c2e84c69849c6c73f128d8cbfd"
+    }
+  ]
+}
